@@ -3,9 +3,10 @@ use anchor_lang::prelude::*;
 declare_id!("Cfi1sAC95izrTMi24dg4vNKS22uPtvJd9HptSNztWygL");
 
 pub mod library;
-pub mod core;
+pub mod subscribe;
+pub mod state;
 
-use crate::core::*;
+use subscribe::*;
 
 #[program]
 mod xscope {
@@ -15,7 +16,7 @@ mod xscope {
         ctx: Context<Initialize>,
         owner: Pubkey,
         manager: Pubkey,
-        fee_receiver: Pubkey
+        fee_receiver: Pubkey,
     ) -> Result<()> {
         Initialize::do_initialize(
             ctx,

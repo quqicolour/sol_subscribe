@@ -13,5 +13,7 @@ pub enum ErrorCode {
     #[msg("Mul overflow.")]
     MulOverflow,
     #[msg("Invalid time.")]
-    InvalidTime
+    InvalidTime,
+    #[msg("Zero copies.")]
+    ZeroCopies
 }
